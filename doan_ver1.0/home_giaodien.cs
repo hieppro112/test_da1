@@ -328,5 +328,70 @@ namespace doan_ver1._0
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMa_sp_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtThanhTien_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbDanhMuc_Sp_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSoLuong_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTenSp_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDonGia_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGV_sanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
