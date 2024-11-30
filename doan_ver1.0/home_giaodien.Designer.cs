@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+
             this.panel_banner = new System.Windows.Forms.Panel();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.app_account = new System.Windows.Forms.Panel();
@@ -298,9 +300,9 @@
             this.panel_sanPham.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel_sanPham.Controls.Add(this.tabControl1);
             this.panel_sanPham.ForeColor = System.Drawing.Color.White;
-            this.panel_sanPham.Location = new System.Drawing.Point(331, 60);
+            this.panel_sanPham.Location = new System.Drawing.Point(331, 62);
             this.panel_sanPham.Name = "panel_sanPham";
-            this.panel_sanPham.Size = new System.Drawing.Size(852, 432);
+            this.panel_sanPham.Size = new System.Drawing.Size(876, 430);
             this.panel_sanPham.TabIndex = 7;
             // 
             // tabControl1
@@ -402,7 +404,7 @@
             // 
             this.btnLamMoi_Sp.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnLamMoi_Sp.ForeColor = System.Drawing.Color.Black;
-            this.btnLamMoi_Sp.Location = new System.Drawing.Point(663, 161);
+            this.btnLamMoi_Sp.Location = new System.Drawing.Point(650, 138);
             this.btnLamMoi_Sp.Name = "btnLamMoi_Sp";
             this.btnLamMoi_Sp.Size = new System.Drawing.Size(158, 59);
             this.btnLamMoi_Sp.TabIndex = 31;
@@ -413,7 +415,7 @@
             // 
             this.btnSua_Sp.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnSua_Sp.ForeColor = System.Drawing.Color.Black;
-            this.btnSua_Sp.Location = new System.Drawing.Point(445, 161);
+            this.btnSua_Sp.Location = new System.Drawing.Point(438, 138);
             this.btnSua_Sp.Name = "btnSua_Sp";
             this.btnSua_Sp.Size = new System.Drawing.Size(158, 59);
             this.btnSua_Sp.TabIndex = 30;
@@ -424,7 +426,7 @@
             // 
             this.btnXoa_Sp.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnXoa_Sp.ForeColor = System.Drawing.Color.Black;
-            this.btnXoa_Sp.Location = new System.Drawing.Point(235, 161);
+            this.btnXoa_Sp.Location = new System.Drawing.Point(235, 138);
             this.btnXoa_Sp.Name = "btnXoa_Sp";
             this.btnXoa_Sp.Size = new System.Drawing.Size(158, 59);
             this.btnXoa_Sp.TabIndex = 29;
@@ -435,7 +437,7 @@
             // 
             this.btnThem_Sp.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnThem_Sp.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnThem_Sp.Location = new System.Drawing.Point(24, 161);
+            this.btnThem_Sp.Location = new System.Drawing.Point(24, 142);
             this.btnThem_Sp.Name = "btnThem_Sp";
             this.btnThem_Sp.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnThem_Sp.Size = new System.Drawing.Size(158, 59);
@@ -531,14 +533,7 @@
             // table_info_accout
             // 
             this.table_info_accout.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.table_info_accout.DefaultCellStyle = dataGridViewCellStyle1;
+
             this.table_info_accout.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.table_info_accout.Location = new System.Drawing.Point(0, 281);
             this.table_info_accout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -651,8 +646,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(175)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(1253, 569);
-            this.Controls.Add(this.panel_account);
-            this.Controls.Add(this.panel_banner);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
@@ -660,6 +653,8 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.app_account);
             this.Controls.Add(this.panel_sanPham);
+            this.Controls.Add(this.panel_account);
+            this.Controls.Add(this.panel_banner);
             this.ForeColor = System.Drawing.Color.White;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "home_giaodien";
