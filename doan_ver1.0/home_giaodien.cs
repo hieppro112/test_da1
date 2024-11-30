@@ -20,11 +20,13 @@ namespace doan_ver1._0
             panel_sanPham.Hide();
             quyen_admin(vaitro);
         }
+        //tim kiếm danh sách 
+        
         private void quyen_admin(string vaitro)
         {
             if(vaitro != null)
             {
-                if(vaitro != "Admin")
+                if(vaitro != "Admin" )
                 {
                     table_info_accout.DefaultCellStyle.ForeColor = Color.White;
                     table_info_accout.DefaultCellStyle.BackColor = Color.Black;
@@ -33,8 +35,8 @@ namespace doan_ver1._0
                 }
             }
         }
-        SqlConnection connect = new SqlConnection("Data Source=DESKTOP-QDFNGC7\\SQLEXPRESS;Initial Catalog=quanly_cuahang_dienmay;Integrated Security=True");
-        //SqlConnection connect = new SqlConnection("Data Source=MSI\\SQLEXPRESS;Initial Catalog=quanly_cuahang_dienmay;Integrated Security=True;");
+        //SqlConnection connect = new SqlConnection("Data Source=DESKTOP-QDFNGC7\\SQLEXPRESS;Initial Catalog=quanly_cuahang_dienmay;Integrated Security=True");
+        SqlConnection connect = new SqlConnection("Data Source=MSI\\SQLEXPRESS;Initial Catalog=quanly_cuahang_dienmay;Integrated Security=True;");
 
 
         private DataTable loaddl_nhanvien()
@@ -114,6 +116,7 @@ namespace doan_ver1._0
 
         private void app_account_Click(object sender, EventArgs e)
         {
+            panel_banner.Hide();
             panel_sanPham.Hide();
             panel_account.Show();
         }
@@ -148,6 +151,7 @@ namespace doan_ver1._0
 
         private void app_SanPham_Click(object sender, EventArgs e)
         {
+            panel_banner.Hide();
             panel_account.Hide();
             panel_sanPham.Show();
         }
@@ -227,169 +231,12 @@ namespace doan_ver1._0
 
         }
 
-        private void btnXoa_Sp_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                connect.Open();
-                SqlCommand cmdXoa = new SqlCommand("tp_XoaSanPham", connect);
-                cmdXoa.CommandType = CommandType.StoredProcedure;
-
-                SqlParameter ma = new SqlParameter("@MaSanPham",txtMa_sp.Text);
-                cmdXoa.Parameters.Add(ma);
-
-                if (cmdXoa.ExecuteNonQuery() > 0)
-                {
-                    MessageBox.Show("Xóa thành công ! ");
-                }
-                else
-                {
-                    MessageBox.Show("Xóa thất bại ! ");
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                connect.Close();
-            }
-            dataGV_sanPham.DataSource = loaddl_SanPham();
-        }
-
-        private void btnSua_Sp_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Kiểm tra nếu người dùng nhập đủ thông tin
-                if (string.IsNullOrWhiteSpace(txtMa_sp.Text) || string.IsNullOrWhiteSpace(txtDonGia.Text) || string.IsNullOrWhiteSpace(txtSoLuong.Text))
-                {
-                    MessageBox.Show("Vui lòng nhập đủ mã sản phẩm, đơn giá và số lượng.");
-                    return;
-                }
-
-             
-             
-
-                // Tính thành tiền
-                double thanhTien = double.Parse(txtDonGia.Text) * int.Parse(txtSoLuong.Text);
-
-                // Tiến hành sửa sản phẩm trong cơ sở dữ liệu
-                connect.Open();
-                SqlCommand cmdSua = new SqlCommand("tp_SuaSanPham", connect);
-                cmdSua.CommandType = CommandType.StoredProcedure;
-
-                // Thêm các tham số vào câu lệnh
-                cmdSua.Parameters.Add(new SqlParameter("@MaSanPham", txtMa_sp.Text));   // Mã sản phẩm
-                cmdSua.Parameters.Add(new SqlParameter("@TenSanPham", txtTenSp.Text));   // Tên sản phẩm
-                cmdSua.Parameters.Add(new SqlParameter("@SoLuong", txtSoLuong.Text));            // Số lượng
-                cmdSua.Parameters.Add(new SqlParameter("@DonGia", txtDonGia.Text));              // Đơn giá
-                cmdSua.Parameters.Add(new SqlParameter("@ThanhTien", thanhTien));        // Thành tiền
-                cmdSua.Parameters.Add(new SqlParameter("@DanhMuc", cbDanhMuc_Sp.Text));    // Danh mục
-
-                // Kiểm tra kết quả thực thi
-                cmdSua.ExecuteNonQuery();
-
-                MessageBox.Show("Cập nhật sản phẩm thành công!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message);
-            }
-            finally
-            {
-                connect.Close();
-            }
-
-            // Load lại dữ liệu
-            dataGV_sanPham.DataSource = loaddl_SanPham();
-        }
-
         private void btnLamMoi_Sp_Click(object sender, EventArgs e)
         {
-            try
-            {
-                
-                dataGV_sanPham.DataSource = loaddl_SanPham();
-
-          
-                txtMa_sp.Clear();
-                txtTenSp.Clear();
-                txtSoLuong.Clear();
-                txtDonGia.Clear();
-                txtThanhTien.Clear();
-               
-
-                MessageBox.Show("Dữ liệu đã được làm mới!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message);
-            }
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
 
         }
 
-        private void txtMa_sp_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtThanhTien_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbDanhMuc_Sp_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtSoLuong_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTenSp_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDonGia_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGV_sanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
+        private void table_info_accout_DoubleClick(object sender, EventArgs e)
         {
 
         }
