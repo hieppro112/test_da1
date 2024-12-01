@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-
             this.panel_banner = new System.Windows.Forms.Panel();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.app_account = new System.Windows.Forms.Panel();
@@ -215,9 +212,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(69, 23);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(192, 20);
+            this.label3.Size = new System.Drawing.Size(59, 20);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Danh Sách Sản Phẩm\r\n";
+            this.label3.Text = "qun ly";
             this.label3.Click += new System.EventHandler(this.app_SanPham_Click);
             // 
             // panel5
@@ -533,7 +530,6 @@
             // table_info_accout
             // 
             this.table_info_accout.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-
             this.table_info_accout.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.table_info_accout.Location = new System.Drawing.Point(0, 281);
             this.table_info_accout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
